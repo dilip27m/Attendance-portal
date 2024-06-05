@@ -1,0 +1,141 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap");
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: url('../resources/bg.jpg') no-repeat center center/cover;
+    z-index: -1; /* Use an image */
+    /* background: #56d9a0; */ /* Or use a color */
+}
+
+body::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Black overlay with 50% opacity */
+    z-index: -1;
+}
+
+.wrapper {
+    width: 420px;
+    background: #fff; /* White background for the login box */
+    border-radius: 10px;
+    padding: 30px 40px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Shadow with opacity 0.5 */
+    color: #333; /* Dark text color for better contrast */
+}
+
+.wrapper h1 {
+    font-size: 36px;
+    text-align: center;
+    color: #333; /* Dark text color */
+    transition: color 0.3s ease; /* Smooth transition for color change */
+}
+
+.wrapper h1:hover {
+    color: #009970; /* New color on hover */
+}
+
+.wrapper .input-box {
+    position: relative;
+    width: 100%;
+    height: 50px;
+    margin: 30px 0;
+}
+
+.input-box input {
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    border: none;
+    outline: none;
+    border: 2px solid rgba(0, 0, 0, 0.2); /* Border color for better contrast */
+    border-radius: 40px;
+    font-size: 16px;
+    color: #333; /* Dark text color */
+    padding: 20px 45px 20px 20px;
+}
+
+.input-box input::placeholder {
+    color: #333; /* Dark placeholder color */
+}
+
+.input-box i {
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 20px;
+    color: #333; /* Dark icon color */
+}
+
+.wrapper .remember-forget {
+    display: flex;
+    justify-content: space-between;
+    font-size: 14.5px;
+    margin: -15px 0 15px;
+    color: #333; /* Dark text color */
+}
+
+.remember-forget label input {
+    accent-color: #333; /* Dark checkbox color */
+    margin-right: 3px;
+}
+
+.remember-forget a {
+    color: #333; /* Dark link color */
+    text-decoration: none;
+}
+
+.remember-forget a:hover {
+    text-decoration: underline;
+}
+
+.wrapper .btn {
+    width: 100%;
+    height: 45px;
+    background: #56d9a0; /* Button background color */
+    border: none;
+    outline: none;
+    border-radius: 40px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, .1);
+    cursor: pointer;
+    font-size: 16px;
+    color: #fff; /* Button text color */
+    font-weight: 600;
+    transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transition for background and color */
+}
+
+.wrapper .btn:hover {
+    background: #009970; /* New background color on hover */
+    color: #fff; /* New text color on hover */
+}
+
+.wrapper .register-link {
+    font-size: 14.5px;
+    text-align: center;
+    margin: 20px 0 15px;
+    color: #333; /* Dark text color */
+}
+
+.register-link p a {
+    color: #56d9a0; /* Link color */
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.register-link p a:hover {
+    text-decoration: underline;
+}

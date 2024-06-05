@@ -1,0 +1,167 @@
+
+body, html {
+    height: 100%;
+    margin: 0;
+}
+
+.navbar {
+    background-color: #fff;
+    height: 80px;
+    margin: 20px;
+    border-radius: 10px;
+    padding: 8px;
+    border: 0.5px solid #000;
+    border-width: 5px;
+}
+
+.navbar-brand {
+    font-weight: 500;
+    color: #009970;
+    font-size: 24px;
+    transition: 0.3s color;
+}
+
+.navbar-toggler {
+    border: none;
+}
+
+.navbar-toggler:focus, .btn-close:focus {
+    box-shadow: none;
+    outline: none;
+}
+
+.nav-link {
+    color: #666777;
+    font-weight: 500;
+}
+
+.nav-link:hover, .nav-link.active {
+    color: #000;
+}
+
+.background-image {
+    position: relative;
+    height: 70%;
+    width: 100%;
+    background-image: url('../resources/bg5.jpg'); 
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    overflow: hidden;
+}
+
+
+#outer-overlay {
+    background-color: rgba(0, 0, 0, 0.5);
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 70%;
+    width: 100%;
+    z-index: 1;
+}
+
+#quote {
+    color: white;
+    font-size: 40px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    z-index: 2;
+}
+
+.green-line {
+    position: absolute;
+    height: 10px;
+    background-color: #009970;
+    width: 100%;
+    bottom: 230px;
+}
+
+@media (min-width: 1200px) {
+    .green-line {
+        margin-left: calc((100% - 1200px) / 2);
+        width: 1200px;
+        
+    }
+}
+
+#title {
+    font-size: xx-large;
+    margin-top: 20px;
+}
+
+#content {
+    font-size: small;
+    margin-top: 10px;
+}
+
+#signup {
+    margin-top: 20px;
+}
+
+.outer-box {
+    height: 400px;
+    width: 100%;
+    max-width: 350px;
+    border: 1px solid #ccc;
+    margin: 10px;
+    overflow: hidden;
+    transition: transform 0.5s;
+    background-color: #f5f5f5;
+    border-radius: 10px;
+}
+
+.outer-box:hover {
+    transform: scale(1.05);
+}
+
+.inner-box {
+    padding: 20px;
+    font-family: 'Roboto', sans-serif;
+    text-align: center;
+}
+
+.inner-box h3 {
+    font-size: 28px;
+    margin-bottom: 20px;
+}
+
+.inner-box p {
+    font-size: 16px;
+}
+
+.image {
+    height: 50px;
+    width: 50px;
+    margin: 30px auto;
+}
+
+footer {
+    background-color: #f8f9fa;
+    padding: 20px;
+    margin-top: 50px;
+}
+
+footer h2 {
+    font-size: 40px;
+    margin-bottom: 24px;
+}
+
+footer p {
+    font-size: 18px;
+    margin-bottom: 32px;
+}
+
+footer .form-control {
+    border-radius: 10px;
+}
+
+footer button.btn-primary {
+    border-radius: 10px;
+    padding: 12px 24px;
+    font-size: 18px;
+    margin-top: 16px;
+}

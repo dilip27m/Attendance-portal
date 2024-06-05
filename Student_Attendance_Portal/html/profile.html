@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile Page</title>
+    <link rel="stylesheet" href="../css/profile.css">
+</head>
+<body>
+    <div class="container">
+        <div class="profile-header">
+            <h2>User Profile</h2>
+        </div>
+        <div class="profile-content">
+            <div class="profile-sidebar">
+                <div class="profile-pic-container">
+                    <img src="../resources/avatar.svg" alt="Profile Picture" class="profile-pic">
+                </div>
+                <h3 id="name-display"></h3>
+                <p id="title-display"></p>
+                <div class="profile-actions">
+                    <button class="btn" onclick="openForm()">Update</button>
+                </div>
+            </div>
+            <div class="profile-main">
+                <div class="profile-info">
+                    <h4>Name</h4>
+                    <p id="name"></p>
+                    <h4>Institute</h4>
+                    <p id="institute"></p>
+                    <h4>Email</h4>
+                    <p id="email"></p>
+                    <h4>Phone</h4>
+                    <p id="phone"></p>
+                    <h4>Address</h4>
+                    <p id="address"></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="update-form" class="form-popup">
+        <form class="form-container" id="profile-form">
+            <h2>Fill Profile</h2>
+            
+            <label for="name"><b>Name</b></label>
+            <input type="text" id="form-name" placeholder="Enter your name" required>
+            
+            <label for="institute"><b>Institute</b></label>
+            <input type="text" id="form-institute" placeholder="Enter your institute" required>
+            
+            <label for="email"><b>Email</b></label>
+            <input type="email" id="form-email" placeholder="Enter your email" required>
+            
+            <label for="phone"><b>Phone</b></label>
+            <input type="tel" id="form-phone" placeholder="Enter your phone number" required pattern="[0-9]{10}">
+            
+            <label for="address"><b>Address</b></label>
+            <input type="text" id="form-address" placeholder="Enter your address" required>
+
+            <button type="button" class="btn" onclick="updateProfile()">Save</button>
+            <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
+        </form>
+    </div>
+
+    <script src="../js/profile.js"></script>
+</body>
+</html>

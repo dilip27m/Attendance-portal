@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Attendance Registration</title>
+    <link rel="stylesheet" href="../css/dashboard.css">
+    <style>
+        .profile{
+            width: 70px;
+            position: absolute;
+            margin-top: 12%;
+            margin-left: 5px;
+        }
+        .options {
+            background-color: transparent;
+            border: none;
+            width: 300px;
+        }
+
+        .frame {
+            position: relative;
+            overflow: visible;
+            width: 100%;
+            height: 90%;
+            top: 71px;
+        }
+
+        .toggle-div {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            display: none;
+        }
+        .toggle-div.active {
+            display: block;
+        }
+
+        #register {
+            background: url(../resources/background.jpg) center / cover;
+            object-fit: cover;
+            height: 100vh;
+        }
+
+        .table-container {
+            width: 60%;
+            height: 550px; 
+            margin: 50px auto 0;
+            overflow-y: auto; 
+            backdrop-filter: blur(10px);
+            background: rgba(255, 255, 255, 0.8);
+            border-radius: 10px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+        }
+        .table-container thead{
+            position: sticky;
+            top: 0;
+        }
+
+        .table-container::-webkit-scrollbar{
+            width: 4px;
+            height: 5px;
+        }
+        .table-container::-webkit-scrollbar-thumb {
+            background-color: rgba(0, 0, 0, 0.4);
+            border-radius: 4px; 
+        }
+
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th, td {
+            padding: 12px;
+            text-align: center;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+        }
+
+        th {
+            color: aliceblue;
+            background-color: rgb(0, 0, 0);
+            font-weight: bold;
+        }
+
+        tbody tr:nth-child(even) {
+            background-color: rgba(255, 255, 255, 0.5);
+        }
+
+        tbody tr:hover {
+            background-color: rgba(255, 255, 255, 0.9);
+        }
+
+        .status {
+            width: 150px;
+            font-weight: bold;
+        }
+
+        .status.present span {
+            background-color: green;
+            color: white;
+            padding: 5px 10px;
+            border-radius: 5px;
+        }
+
+        .status.absent span {
+            background-color: red;
+            color: white;
+            padding: 5px 10px;
+            border-radius: 5px;
+        }
+
+        
+    .button {
+        background-color: white;
+        color: black;
+        border-radius: 25px;
+        font-size: 17px;
+        font-weight: 600;
+        padding: 15px 15px;
+        cursor: pointer;
+        transition: all 0.3s ease-in-out;
+        border: 1px solid black;
+        box-shadow: 0 0 0 0 black;
+        margin: 10px; 
+    }
+
+    .button:hover {
+        transform: translateY(-4px) translateX(-2px);
+        box-shadow: 2px 5px 0 0 black;
+    }
+
+    .button-container {
+        display: flex;
+        justify-content: center; 
+        align-items: center; 
+        margin-top: 20px;
+    }
+    </style>
+</head>
+<body>
+    <div class="side-bar">
+        <div class="profile">
+            <a href="profile.html"><img src="../resources/avatar.svg" alt="" height="70px"></a>
+        </div>
+        <div class="logo-name" style="margin-left: 60px;margin-top: 10%;">
+            <h1>StudenTrack</h1>
+        </div>
+        <ul>
+            <button class="options" onclick="showDiv('register')"><li><img src="../resources/dashboard.png" alt="Dashboard Icon">Dashboard</li></button>
+            <button class="options" onclick="showDiv('profile')"><li><img src="../resources/profile-sidebar.png" alt="Payment Icon">Profile</li></button>
+            <button class="options" onclick="showDiv('calendar')"><li><img src="../resources/calendar.png" alt="Settings Icon">Calender</li></button>
+            <button class="options" onclick="showDiv('faq')"><li><img src="../resources/question.png" alt="Help Icon">FAQs</li></button>
+            <button class="options" onclick="showDiv('logout')"><li><img src="../resources/logout.png" alt="Help Icon">Logout</li></button>
+        </ul>
+    </div>
+    <div class="container">
+        <div class="header">
+            <div class="nav">
+                <div class="search">
+                    <input type="text" placeholder="Search..">
+                    <button type="submit"><img src="../resources/search.png" alt="Search Icon"></button>
+                </div>
+            </div>
+        </div>
+        <div class="frame">
+            <div id="register" class="toggle-div active">
+                <div class="table-container">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th id="stud_name">Student Name</th>
+                                <th>Register Number</th>
+                                <th>Attendance</th>
+                                <th id="status">Status</th>
+                            </tr>
+                        </thead>
+                        <tbody class="table_body">
+                            <tr>
+                                <td>Student 1</td>
+                                <td>Reg001</td>
+                                <td><input type="checkbox" class="attendance"></td>
+                                <td class="status"></td>
+                            </tr>
+                            <tr>
+                                <td>Student 2</td>
+                                <td>Reg002</td>
+                                <td><input type="checkbox" class="attendance"></td>
+                                <td class="status"></td>
+                            </tr>
+                            <tr>
+                                <td>Student 3</td>
+                                <td>Reg003</td>
+                                <td><input type="checkbox" class="attendance"></td>
+                                <td class="status"></td>
+                            </tr>
+                            <tr>
+                                <td>Student 4</td>
+                                <td>Reg004</td>
+                                <td><input type="checkbox" class="attendance"></td>
+                                <td class="status"></td>
+                            </tr>
+                            <tr>
+                                <td>Student 5</td>
+                                <td>Reg005</td>
+                                <td><input type="checkbox" class="attendance"></td>
+                                <td class="status"></td>
+                            </tr>
+                            <tr>
+                                <td>Student 6</td>
+                                <td>Reg006</td>
+                                <td><input type="checkbox" class="attendance"></td>
+                                <td class="status"></td>
+                            </tr>
+                            <tr>
+                                <td>Student 7</td>
+                                <td>Reg007</td>
+                                <td><input type="checkbox" class="attendance"></td>
+                                <td class="status"></td>
+                            </tr>
+                            <tr>
+                                <td>Student 8</td>
+                                <td>Reg008</td>
+                                <td><input type="checkbox" class="attendance"></td>
+                                <td class="status"></td>
+                            </tr>
+                            <tr>
+                                <td>Student 9</td>
+                                <td>Reg009</td>
+                                <td><input type="checkbox" class="attendance"></td>
+                                <td class="status"></td>
+                            </tr>
+                            <tr>
+                                <td>Student 10</td>
+                                <td>Reg010</td>
+                                <td><input type="checkbox" class="attendance"></td>
+                                <td class="status"></td>
+                            </tr>
+                            <tr>
+                                <td>Student 11</td>
+                                <td>Reg011</td>
+                                <td><input type="checkbox" class="attendance"></td>
+                                <td class="status"></td>
+                            </tr>
+                            <tr>
+                                <td>Student 12</td>
+                                <td>Reg012</td>
+                                <td><input type="checkbox" class="attendance"></td>
+                                <td class="status"></td>
+                            </tr>
+                            <tr>
+                                <td>Student 13</td>
+                                <td>Reg013</td>
+                                <td><input type="checkbox" class="attendance"></td>
+                                <td class="status"></td>
+                            </tr>
+                            <tr>
+                                <td>Student 14</td>
+                                <td>Reg014</td>
+                                <td><input type="checkbox" class="attendance"></td>
+                                <td class="status"></td>
+                            </tr>
+                            <tr>
+                                <td>Student 15</td>
+                                <td>Reg015</td>
+                                <td><input type="checkbox" class="attendance"></td>
+                                <td class="status"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="button-container">
+                    <button id="submit" class="button" onclick="resetAttendance()">Reset</button>
+                    <button id="reset" class="button" onclick="updateAttendance()">Submit</button>
+                </div>
+            </div>
+            <div id="payment" class="toggle-div">
+                payment
+            </div>
+            <div id="settings" class="toggle-div">
+                settings
+            </div>
+            <div id="help" class="toggle-div">
+                help
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        function showDiv(divId) {
+        if (divId === 'profile') {
+            window.location.href = 'profile.html';
+        } else if (divId === 'calendar') {
+            window.location.href = 'calendar.html';
+        } else if (divId === 'faq') {
+            window.open('http://localhost:3000/', '_blank');
+        } else if (divId === 'logout') {
+            window.location.href = 'front_page.html';
+        } else {
+            document.querySelectorAll('.toggle-div').forEach(div => {
+                div.classList.remove('active');
+            });
+            document.getElementById(divId).classList.add('active');
+        }
+    }
+        function updateAttendance() {
+            const rows = document.querySelectorAll('tbody tr');
+            rows.forEach(row => {
+                const checkbox = row.querySelector('.attendance');
+                const statusCell = row.querySelector('.status');
+                if (checkbox.checked) {
+                    statusCell.innerHTML = '<span>Present</span>';
+                    statusCell.classList.remove('absent');
+                    statusCell.classList.add('present');
+                } else {
+                    statusCell.innerHTML = '<span>Absent</span>';
+                    statusCell.classList.remove('present');
+                    statusCell.classList.add('absent');
+                }
+            });
+        }
+
+        function resetAttendance() {
+            const checkboxes = document.querySelectorAll('.attendance');
+            const statuses = document.querySelectorAll('.status');
+            checkboxes.forEach(checkbox => {
+                checkbox.checked = false;
+            });
+            statuses.forEach(status => {
+                status.innerHTML = '';
+                status.classList.remove('present', 'absent');
+            });
+        }
+    </script>
+</body>
+</html>
